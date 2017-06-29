@@ -15,11 +15,11 @@
 // Better description of available configuration settings you can find here:
 // <https://github.com/poweradmin/poweradmin/wiki/Configuration-File>
 // Database settings
-$db_host = $_ENV['MYSQL_HOST'];
-$db_port = $_ENV['MYSQL_PORT'];
-$db_user = $_ENV['MYSQL_USER'];
-$db_pass = $_ENV['MYSQL_PASSWORD'];
-$db_name = $_ENV['MYSQL_DB'];
+$db_host = getenv('MYSQL_HOST') ?? 'localhost';
+$db_port = getenv('MYSQL_PORT') ?? 3306;
+$db_user = getenv('MYSQL_USER') ?? 'root';
+$db_pass = getenv('MYSQL_PASS') ?? '';
+$db_name = getenv('MYSQL_DB')   ?? 'pdns';
 $db_type = 'mysql';
 //$db_file              = '';           # used only for SQLite, provide full path to database file
 //$db_debug             = false;        # show all SQL queries
@@ -27,7 +27,7 @@ $db_layer               = 'PDO';        # or MDB2
 //$db_ssl_ca            = '';
 // Security settings
 // This should be changed upon install
-$session_key = $_ENV['SESSION_KEY'];
+$session_key = getenv('SESSION_KEY');
 $password_encryption = 'md5'; // or md5salt
 
 // Interface settings
@@ -40,10 +40,10 @@ $iface_title = 'Poweradmin';
 $iface_add_reverse_record = true;
 
 // Predefined DNS settings
-$dns_hostmaster = $_ENV['POWERADMIN_HOSTMASTER'];
-$dns_ns1 = $_ENV['POWERADMIN_NS1'];
-$dns_ns2 = $_ENV['POWERADMIN_NS2'];
-$dns_ttl = 86400;
+$dns_hostmaster = getenv('POWERADMIN_HOSTMASTER') ?? $_SERVER['SERVER_NAME'];
+$dns_ns1 = getenv('POWERADMIN_NS1') ?? $_SERVER['SERVER_NAME'];
+$dns_ns1 = getenv('POWERADMIN_NS2') ?? $_SERVER['SERVER_NAME'];
+$dns_ttl = getenv('DNS_TTL') ?? 86400;
 $dns_fancy = false;
 $dns_strict_tld_check = false;
 $dns_top_level_tld_check = false;     // Don't allow to create top level TLDs
