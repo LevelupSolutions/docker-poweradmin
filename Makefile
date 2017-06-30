@@ -34,7 +34,7 @@ help:  ## display this help
 build: .build  ## build docker image
 
 .build:
-	$(SCMD) docker build -t $(IMAGE_NAME):$(VERSION) .
+	$(SCMD) docker build -t $(IMAGE_NAME) .
 
 root-shell: | build  ## open a root-shell in container
 	@$(SCMD) docker run $(DOCKER_ENV) \

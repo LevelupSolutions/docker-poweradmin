@@ -1,4 +1,4 @@
-FROM keachi/php-mysql
+FROM keachi/php-sql
 
 ENV MYSQL_HOST localhost
 ENV MYSQL_PORT 3306
