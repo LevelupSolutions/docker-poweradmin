@@ -1,4 +1,4 @@
-FROM docker.netlab.li/netlab/php-mysql
+FROM keachi/php-mysql
 
 ENV MYSQL_HOST localhost
 ENV MYSQL_PORT 3306
@@ -10,6 +10,7 @@ ENV POWERADMIN_NS1 8.8.8.8
 ENV POWERADMIN_NS2 8.8.4.4
 
 RUN apt-get update \
+    && apt-get upgrade -y \
     && apt-get install -y mariadb-client libmcrypt-dev \
     && curl -L https://github.com/poweradmin/poweradmin/archive/v2.1.7.tar.gz > /poweradmin.tar.gz \
     && tar -xav -C /var/www -f /poweradmin.tar.gz \
@@ -20,8 +21,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* /poweradmin.tar.gz /var/www/html/install
 RUN docker-php-ext-install gettext mcrypt
 
-COPY config.inc.php /var/www/html/inc/config.inc.php
-COPY poweradmin.sql entrypoint.sh /
+COPY assets/config.inc.php /var/www/html/inc/config.inc.php
+COPY assets/poweradmin.sql entrypoint.sh /
 
 ENTRYPOINT [ \
     "/bin/bash", \
