@@ -61,7 +61,7 @@ $syslog_ident = 'poweradmin';
 $syslog_facility = LOG_USER;
 
 // PowerDNSSEC settings
-$pdnssec_use = true;
+$pdnssec_use = false;
 $pdnssec_command = '/usr/bin/pdnssec';
 
 // LDAP settings
