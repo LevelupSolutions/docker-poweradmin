@@ -17,7 +17,7 @@
 // Database settings
 $db_host = getenv('MYSQL_HOST') ?? 'localhost';
 $db_port = getenv('MYSQL_PORT') ?? 3306;
-$db_user = getenv('MYSQL_USER') ?? 'root';
+$db_user = getenv('MYSQL_USER') ?? 'pdns';
 $db_pass = getenv('MYSQL_PASS') ?? '';
 $db_name = getenv('MYSQL_DB')   ?? 'pdns';
 $db_type = 'mysql';
