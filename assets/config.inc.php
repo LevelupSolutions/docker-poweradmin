@@ -42,7 +42,7 @@ $iface_add_reverse_record = true;
 // Predefined DNS settings
 $dns_hostmaster = getenv('POWERADMIN_HOSTMASTER') ?? $_SERVER['SERVER_NAME'];
 $dns_ns1 = getenv('POWERADMIN_NS1') ?? $_SERVER['SERVER_NAME'];
-$dns_ns1 = getenv('POWERADMIN_NS2') ?? $_SERVER['SERVER_NAME'];
+$dns_ns2 = getenv('POWERADMIN_NS2') ?? $_SERVER['SERVER_NAME'];
 $dns_ttl = getenv('DNS_TTL') ?? 86400;
 $dns_fancy = false;
 $dns_strict_tld_check = false;
