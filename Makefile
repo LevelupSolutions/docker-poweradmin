@@ -1,7 +1,6 @@
 .DEFAULT_GOAL := help
 
 IMAGE_NAME			:= keachi/poweradmin
-IMAGE_DESCRIPTION	:= "Poweradmin"
 SHELL				:= /bin/sh
 
 SCMD := $(shell \
