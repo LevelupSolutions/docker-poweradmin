@@ -23,7 +23,7 @@ RUN docker-php-ext-install \
         pdo_mysql \
         gettext \
         mcrypt
-RUN curl -L https://github.com/ivancarrazana/poweradmin/archive/master.zip > /poweradmin.zip \
+RUN curl -L https://github.com/ivancarrazana/poweradmin/archive/patch-1.zip > /poweradmin.zip \
  && unzip /poweradmin.zip -d /var/www \
  && rm -rf /var/www/html \
  && mv /var/www/poweradmin* /var/www/html \
