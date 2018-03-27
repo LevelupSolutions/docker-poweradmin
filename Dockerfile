@@ -22,13 +22,13 @@ RUN docker-php-ext-install \
         pdo_mysql \
         gettext \
         mcrypt
-RUN curl -L https://github.com/poweradmin/poweradmin/archive/v2.1.7.tar.gz > /poweradmin.tar.gz \
- && tar -xav -C /var/www -f /poweradmin.tar.gz \
+RUN curl -L https://github.com/poweradmin/poweradmin/archive/master.zip > /poweradmin.zip \
+ && unzip /poweradmin.zip -d /var/www \
  && rm -rf /var/www/html \
  && mv /var/www/poweradmin* /var/www/html \
  && chown -R root:root /var/www/html
 RUN apt-get autoremove --purge -y \
- && rm -rf /var/lib/apt/lists/* /poweradmin.tar.gz /var/www/html/install
+ && rm -rf /var/lib/apt/lists/* /poweradmin.tar.gz
 
 COPY assets/config.inc.php /var/www/html/inc/config.inc.php
 COPY assets/poweradmin.sql entrypoint.sh /
