@@ -32,7 +32,7 @@ $password_encryption = 'md5'; // or md5salt
 
 // Interface settings
 $iface_lang = 'en_EN';
-$iface_style = 'punk';
+$iface_style = 'levelup';
 $iface_rowamount = 50;
 $iface_expire = 1800;
 $iface_zonelist_serial = false;
