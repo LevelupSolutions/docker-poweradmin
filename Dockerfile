@@ -21,8 +21,7 @@ RUN docker-php-ext-install \
         mysqli \
         pdo \
         pdo_mysql \
-        gettext \
-        mcrypt
+        gettext
 RUN curl -L https://github.com/ivancarrazana/poweradmin/archive/patch-1.zip > /poweradmin.zip \
  && unzip /poweradmin.zip -d /var/www \
  && rm -rf /var/www/html \
@@ -33,8 +32,7 @@ RUN apt-get autoremove --purge -y \
 
 COPY assets/config.inc.php /var/www/html/inc/config.inc.php
 COPY assets/poweradmin.sql entrypoint.sh /
-
-RUN echo 'error_reporting = E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED' > /usr/local/etc/php/php.ini
+COPY assets/php.ini /usr/local/etc/php
 
 ENTRYPOINT [ \
     "/bin/bash", \
