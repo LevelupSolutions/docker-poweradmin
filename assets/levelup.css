@@ -4,7 +4,7 @@
  * Comments: Based on the normalize.css design. The best I could do without touching the php files. Temp solution untill an MVC model is applied
 /* RESET */
 @import url("../style/bootstrap.min.css")
-@import url("../style/normalize.css");
+/*@import url("../style/normalize.css");*/
 
 /* BEGIN ACTUAL STYLESHEET */
 body {
