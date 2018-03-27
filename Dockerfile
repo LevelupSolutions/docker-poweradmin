@@ -1,4 +1,4 @@
-FROM php:7.1-apache-jessie
+FROM php:7.2-apache-stretch
 
 ENV POWERADMIN_HOSTMASTER ""
 ENV POWERADMIN_NS1 8.8.8.8
@@ -21,18 +21,18 @@ RUN docker-php-ext-install \
         mysqli \
         pdo \
         pdo_mysql \
-        gettext \
-        mcrypt
-RUN curl -L https://github.com/poweradmin/poweradmin/archive/master.zip > /poweradmin.zip \
+        gettext
+RUN curl -L https://github.com/ivancarrazana/poweradmin/archive/patch-1.zip > /poweradmin.zip \
  && unzip /poweradmin.zip -d /var/www \
  && rm -rf /var/www/html \
  && mv /var/www/poweradmin* /var/www/html \
  && chown -R root:root /var/www/html
 RUN apt-get autoremove --purge -y \
- && rm -rf /var/lib/apt/lists/* /poweradmin.zip
+ && rm -rf /var/lib/apt/lists/* /poweradmin.zip  /var/www/html/install
 
 COPY assets/config.inc.php /var/www/html/inc/config.inc.php
 COPY assets/poweradmin.sql entrypoint.sh /
+COPY assets/php.ini /usr/local/etc/php
 
 ENTRYPOINT [ \
     "/bin/bash", \
