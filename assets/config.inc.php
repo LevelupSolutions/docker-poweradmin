@@ -36,7 +36,7 @@ $iface_style = 'levelup';
 $iface_rowamount = 50;
 $iface_expire = 1800;
 $iface_zonelist_serial = false;
-$iface_title = 'LevelUP Cloud DNS';
+$iface_title = 'CloudNS Panel';
 $iface_add_reverse_record = true;
 
 // Predefined DNS settings
