@@ -1,7 +1,5 @@
 <?php
 
-ini_set('display_errors', 0);
-
 /**
  * Sample configuration file with default values
  *

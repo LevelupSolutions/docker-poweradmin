@@ -33,6 +33,7 @@ RUN apt-get autoremove --purge -y \
 
 COPY assets/config.inc.php /var/www/html/inc/config.inc.php
 COPY assets/poweradmin.sql entrypoint.sh /
+COPY assers/docker-php-suppress-warnings.ini /usr/local/etc/php/conf.d/
 
 ENTRYPOINT [ \
     "/bin/bash", \
