@@ -15,7 +15,8 @@ RUN apt-get update \
  && apt-get upgrade -y \
  && apt-get install -y \
         mariadb-client \
-        libmcrypt-dev
+        libmcrypt-dev \
+        unzip
 RUN docker-php-ext-install \
         mysqli \
         pdo \
@@ -28,7 +29,7 @@ RUN curl -L https://github.com/poweradmin/poweradmin/archive/master.zip > /power
  && mv /var/www/poweradmin* /var/www/html \
  && chown -R root:root /var/www/html
 RUN apt-get autoremove --purge -y \
- && rm -rf /var/lib/apt/lists/* /poweradmin.tar.gz
+ && rm -rf /var/lib/apt/lists/* /poweradmin.zip
 
 COPY assets/config.inc.php /var/www/html/inc/config.inc.php
 COPY assets/poweradmin.sql entrypoint.sh /
