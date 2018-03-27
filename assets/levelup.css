@@ -29,13 +29,7 @@ p, div, table tr, table tr td, table tr th, strong, li, b, input, textarea {
 }
 
 /*HEADERS*/
-h1 {
-	font-size: 2.375em;
-	color: #69A619;
-	text-transform: lowercase;
-	text-shadow: 1px 1px 0 #304d08;
-	text-decoration: none;
-}
+h1 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase; }
 
 h1, .menu {
 	margin: 10px auto;
