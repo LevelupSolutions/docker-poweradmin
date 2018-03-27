@@ -58,6 +58,14 @@ div.footer{
     display: none;
 }
 
+div.content {
+    float: right;
+    width: 80%;
+    background: #e4e4e4;
+    padding: 20px;
+    
+}
+
 table {
     border-collapse: collapse;
 }
