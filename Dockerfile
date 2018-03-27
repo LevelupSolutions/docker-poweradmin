@@ -34,9 +34,7 @@ RUN apt-get autoremove --purge -y \
 COPY assets/config.inc.php /var/www/html/inc/config.inc.php
 COPY assets/poweradmin.sql entrypoint.sh /
 
-RUN { \
-		echo 'error_reporting = E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED'; \
-} > /usr/local/etc/php/conf.d/error-reporting.ini
+RUN echo 'error_reporting = E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED' > /usr/local/etc/php/php.ini
 
 ENTRYPOINT [ \
     "/bin/bash", \
