@@ -33,7 +33,7 @@ RUN apt-get autoremove --purge -y \
 
 COPY assets/config.inc.php /var/www/html/inc/config.inc.php
 COPY assets/poweradmin.sql entrypoint.sh /
-COPY assets/php.ini /usr/local/etc/php/
+COPY assets/php.ini /usr/local/etc/php/php.ini
 
 ENTRYPOINT [ \
     "/bin/bash", \
