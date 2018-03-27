@@ -29,7 +29,7 @@ RUN curl -L https://github.com/poweradmin/poweradmin/archive/master.zip > /power
  && mv /var/www/poweradmin* /var/www/html \
  && chown -R root:root /var/www/html
 RUN apt-get autoremove --purge -y \
- && rm -rf /var/lib/apt/lists/* /poweradmin.zip
+ && rm -rf /var/lib/apt/lists/* /poweradmin.zip  /var/www/html/install
 
 COPY assets/config.inc.php /var/www/html/inc/config.inc.php
 COPY assets/poweradmin.sql entrypoint.sh /
